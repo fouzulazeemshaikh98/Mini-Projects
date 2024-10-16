@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            background: #191825;
+            height: 50vh;
+            width: 100vw;
+            display: grid;
+            place-items: center;
+        }
+
+
+        .cradle {
+            width: 45rem;
+            height: 2rem;
+            border-radius: 0.3rem;
+            /* background-color: #865dff; */
+            border-top: 2rem solid #865dff;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            gap: 4.55rem;
+        }
+
+        .cradle div {
+            width: 0.5rem;
+            height: 20rem;
+            background-color: #865dff;
+            position: relative;
+
+
+
+            &::before {
+                content: "";
+                position: absolute;
+                background-color: #865dff;
+                width: 5rem;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                bottom: -10%;
+                right: -2rem;
+            }
+
+            &:first-child {
+                animation-name: left-swing;
+                animation-duration: 2s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                transform-origin: top left;
+                animation-delay: 0s;
+            }
+
+            &:last-child {
+                animation-name: right-swing;
+                animation-duration: 2s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-delay: 1s;
+                transform-origin: top left;
+            }
+        }
+
+
+        @keyframes left-swing {
+        0% {
+          rotate: 0deg;
+        }
+        25% {
+          rotate: 30deg;
+        }
+        50% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: 0deg;
+        }
+      }
+
+      @keyframes right-swing {
+        0% {
+          rotate: 0deg;
+        }
+        25% {
+          rotate: -30deg;
+        }
+        50% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: 0deg;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cradle">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>
